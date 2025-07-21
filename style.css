@@ -1,12 +1,329 @@
+/* Custom CSS for QuickShow Movie Streaming Site */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f1419 0%, #1a1f36 50%, #0f1419 100%);
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
 }
 
-h1 {
-    color: darkblue;
+/* Navigation */
+.navbar {
+    background: rgba(15, 20, 25, 0.95) !important;
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
 }
 
-p {
-    font-size: 18px;
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #dc3545 !important;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 20, 25, 0.8) 0%,
+        rgba(26, 31, 54, 0.6) 50%,
+        rgba(15, 20, 25, 0.8) 100%
+    ),
+    url('https://images.unsplash.com/photo-1635805737707-575885ab0820?w=1920&h=1080&fit=crop') center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(15, 20, 25, 0.9) 0%,
+        rgba(26, 31, 54, 0.7) 50%,
+        rgba(15, 20, 25, 0.9) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+}
+
+.marvel-logo {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.movie-meta span {
+    font-size: 0.85rem;
+}
+
+.badge {
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+}
+
+/* Now Showing Section */
+.now-showing-section {
+    background: rgba(15, 20, 25, 0.8);
+    padding: 4rem 0;
+}
+
+.movie-card {
+    background: rgba(26, 31, 54, 0.8);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(220, 53, 69, 0.2);
+    border-color: rgba(220, 53, 69, 0.3);
+}
+
+.movie-poster {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-poster {
+    transform: scale(1.05);
+}
+
+.movie-info {
+    padding: 1.5rem;
+}
+
+.movie-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.movie-meta-small {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stars {
+    color: #ffc107;
+}
+
+.rating-number {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Trailers Section */
+.trailers-section {
+    background: rgba(26, 31, 54, 0.6);
+    padding: 4rem 0;
+}
+
+.main-trailer,
+.trailer-thumb {
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.main-trailer:hover,
+.trailer-thumb:hover {
+    transform: scale(1.02);
+}
+
+.trailer-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: rgba(220, 53, 69, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.play-button:hover {
+    background: rgba(220, 53, 69, 1);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-button-small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(220, 53, 69, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.play-button-small:hover {
+    background: rgba(220, 53, 69, 1);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Footer */
+.footer {
+    background: rgba(15, 20, 25, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer a {
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #dc3545 !important;
+}
+
+.app-buttons img {
+    transition: transform 0.3s ease;
+}
+
+.app-buttons a:hover img {
+    transform: scale(1.05);
+}
+
+/* Buttons */
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #c82333 0%, #a71e2a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.movie-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        text-align: center;
+        padding: 2rem 0;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    
+    .movie-poster {
+        height: 250px;
+    }
+    
+    .trailer-img {
+        height: 250px;
+    }
+    
+    .play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(15, 20, 25, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(220, 53, 69, 0.6);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(220, 53, 69, 0.8);
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.loading.show {
+    opacity: 1;
+    transform: translateY(0);
 }
